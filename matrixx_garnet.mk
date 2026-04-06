@@ -10,15 +10,22 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/matrixx/config/common_full_phone.mk)
 
-TARGET_HAS_UDFPS := true
+TARGET_SUPPORTED_REFRESH_RATES := 60,90,120
+TARGET_CUSTOM_UDFPS := true
+WITH_BCR := true
+TARGET_INCLUDE_MATLOG := true
+TARGET_INCLUDE_PIXEL_LAUNCHER := true 
+BYPASS_CHARGE_SUPPORTED := true
+TARGET_OPTIMIZED_DEXOPT := true
+MATRIXX_MAINTAINER := ZeroTwo
 TARGET_DISABLE_EPPE := true
 
 # Inherit from garnet device
 $(call inherit-product, device/xiaomi/garnet/device.mk)
 
-PRODUCT_NAME := lineage_garnet
+PRODUCT_NAME := matrixx_garnet
 PRODUCT_DEVICE := garnet
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
